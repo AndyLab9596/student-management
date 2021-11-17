@@ -1,14 +1,23 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import "./App.css";
+import { NotFound, PrivateRoute } from "./components/common";
+import { AdminLayout } from "./components/layout";
+import LoginPage from "./features/auth/pages/LoginPage";
 
 function App() {
   return (
     <div>
       <Switch>
-        <Route path="/login">{/* Login page */}</Route>
-        <Route path="/admin">{/* Admin layout */}</Route>
-        <Route>{/* Not Found */}</Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <PrivateRoute path="/admin">
+          <AdminLayout />
+        </PrivateRoute>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </div>
   );

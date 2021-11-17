@@ -1,0 +1,45 @@
+@baseUrl = http://js-post-api.herokuapp.com/api
+
+# Students
+
+# @name getAllStudents
+GET {{baseUrl}}/students?_page=1&_limit=10&_sort=mark&_order=desc
+
+###
+
+# @name getStudentById
+GET {{baseUrl}}/students/sktwi1cgkkuif36f3
+
+###
+
+# @name addNewStudent
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+
+{
+  "name": "Andy Lab",
+  "age": 20,
+  "mark": 9.8,
+  "gender": "male",
+  "city": "hcm"
+}
+
+# @name updateStudent
+PATCH  {{baseUrl}}/students
+Content-Type: application/json
+
+
+{
+  "name": "Andy Lab",
+  "age": 20,
+  "mark": 9.8,
+  "gender": "male",
+  "city": "hcm"
+}
+
+# @name removeStudent
+DELETE  {{baseUrl}}/students/sktwi1cgkkuif36f3
+
+###
+
